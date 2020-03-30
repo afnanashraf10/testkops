@@ -1,0 +1,16 @@
+kops create cluster \
+--dns-zone kuberiter.io\
+--name customkops.kuberiter.io\
+--state s3://demokuberiter \
+--cloud aws \
+--kubernetes-version 1.14.0 \
+--master-size t2.medium \
+--master-count 1 \
+--master-zones us-east-2a \
+--master-volume-size 20 \
+--node-size t2.medium \
+--node-volume-size 20 \
+--vpc vpc-03dd6f3a06f31a8bd \
+--node-count 3 \
+--image 383156758163/k8s-1.4-debian-jessie-amd64-hvm-ebs-2016-10-21 \
+--zones us-east-2a,us-east-2b,us-east-2c
